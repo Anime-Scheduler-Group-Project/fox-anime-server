@@ -8,7 +8,7 @@ const app = express()
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-app.get('/', router)
+app.use(router)
 app.use(errorHandler)
 
 app.listen(PORT, () => console.log('Listing at PORT', PORT))
