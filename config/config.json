@@ -1,11 +1,10 @@
 {
   "development": {
     "username": "postgres",
-    "password": "Aisobi",
+    "password": "password",
     "database": "fox_anime_server",
     "host": "localhost",
     "dialect": "postgres",
-    "port": 5433
   },
   "test": {
     "username": "root",
