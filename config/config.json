@@ -4,7 +4,7 @@
     "password": "password",
     "database": "fox_anime_server",
     "host": "localhost",
-    "dialect": "postgres",
+    "dialect": "postgres"
   },
   "test": {
     "username": "root",
