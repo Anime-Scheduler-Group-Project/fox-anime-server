@@ -9,13 +9,6 @@ class AnimeController {
       next(error)
     }
   }
-  static search = async (req, res, next) => {
-    try {
-      //TODO
-    } catch (error) {
-      next(error)
-    }
-  }
 }
 
 module.exports = { AnimeController }

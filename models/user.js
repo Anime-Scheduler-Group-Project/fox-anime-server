@@ -45,6 +45,7 @@ module.exports = (sequelize, DataTypes) => {
         validate: {
           notNull: { msg: 'Password cannot be empty' },
           notEmpty: { msg: 'Password cannot be empty' },
+          len: { args: [6], msg: 'Password must be higher than 6 character' },
         },
       },
       name: {
