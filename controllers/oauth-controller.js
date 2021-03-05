@@ -13,11 +13,9 @@ class OauthController {
         idToken: req.body.token,
         audience: process.env.GOOGLE_CLIENT_ID,
       })
-      //MENCARI EMAIL YANG MASUK DARI CLIENT
       .then((ticket) => {
         const payload = ticket.getPayload()
         console.log(payload, 'INI PAYLOAD')
-        // console.log(payload)
         email = payload.email
         name = payload.name
 
@@ -25,7 +23,6 @@ class OauthController {
           where: { email },
         })
       })
-      //JIKA ADA DI DATABASE MAKA
       .then((data) => {
         if (data) {
           console.log(data, 'ini DATABASE')
@@ -39,7 +36,6 @@ class OauthController {
           })
         }
       })
-      //
       .then((data) => {
         const access_token = data.toJwt()
         console.log(access_token)

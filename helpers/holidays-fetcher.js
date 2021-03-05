@@ -46,6 +46,7 @@ function parsedData(data, durationInDays) {
       if (moment(e.date) < now) return false
       return true
     })
+    .filter((v, i, a) => a.findIndex((t) => t.date === v.date) === i)
     .slice(0, durationInDays)
 
   // Sundays without colliding with result
@@ -58,6 +59,7 @@ function parsedData(data, durationInDays) {
   })
   const joinedResult = [...result, ...sundays]
     .sort((a, b) => moment(a.date) - moment(b.date))
+    .filter((v, i, a) => a.findIndex((t) => t.date === v.date) === i)
     .slice(0, durationInDays)
 
   return joinedResult

@@ -18,6 +18,10 @@ module.exports = (err, req, res, next) => {
       status = 400
       message = ['Email or password cannot be empty']
       break
+    case 'MinusNumberError':
+      status = 400
+      message = ['Number must be greater than 0']
+      break
     case 'SequelizeValidationError':
     case 'SequelizeUniqueConstraintError':
       message = err.errors.map((e) => e.message)
